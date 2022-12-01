@@ -1,12 +1,12 @@
 SELECT
-    [name] as [Customers]
+    C.[name] AS [Customers]
 FROM
-    [Customers]
+    [Customers] C
 WHERE
-    [id] NOT IN
+    C.[id] NOT IN
     (
         SELECT
-            [customerId]
+            [customerID]
         FROM
             [Orders]
     )
