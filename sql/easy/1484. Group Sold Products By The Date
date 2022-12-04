@@ -1,14 +1,9 @@
-SELECT 
-     A.sell_date
-    ,COUNT(A.product) AS num_sold
-    ,STRING_AGG(A.product, ',') WITHIN GROUP (ORDER BY A.product) AS products
-FROM
-    (
-        SELECT DISTINCT
-             product
-            ,sell_date
-        FROM
-            Activities
-    ) AS A
-GROUP BY A.sell_date
-ORDER BY A.sell_date
+SELECT A.sell_date,
+       Count(A.product)                    AS num_sold,
+       String_agg(A.product, ',')
+         within GROUP (ORDER BY a.product) AS products
+FROM   (SELECT DISTINCT product,
+                        sell_date
+        FROM   activities) AS A
+GROUP  BY A.sell_date
+ORDER  BY A.sell_date 
