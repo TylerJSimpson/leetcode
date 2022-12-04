@@ -1,12 +1,4 @@
-SELECT
-    C.name AS Customers
-FROM
-    Customers C
-WHERE
-    C.id NOT IN
-    (
-        SELECT
-            customerID
-        FROM
-            Orders
-    )
+SELECT C.NAME AS Customers
+FROM   customers AS C
+WHERE  C.id NOT IN (SELECT customerid
+                    FROM   orders) 
