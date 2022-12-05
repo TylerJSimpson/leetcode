@@ -1,0 +1,7 @@
+/* MS SQL */
+
+SELECT  w1.id
+FROM    Weather AS w1, 
+        Weather AS w2
+WHERE   w1.Temperature > w2.Temperature 
+AND     DATEDIFF(DAY, w2.recordDate, w1.recordDate) = 1
