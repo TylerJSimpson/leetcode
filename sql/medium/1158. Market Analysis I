@@ -1,0 +1,13 @@
+/* MS SQL */
+
+SELECT  DISTINCT UB.user_id AS buyer_id,
+        MIN(UB.join_date) AS join_date,
+        SUM (CASE
+                WHEN O.order_date IS NOT NULL THEN 1
+                ELSE 0
+            END) AS orders_in_2019
+FROM    Orders AS O
+        RIGHT JOIN Users AS UB
+            ON UB.user_id = O.buyer_id
+            AND DATEPART(YEAR, O.order_date) = '2019'
+GROUP   BY UB.user_id
