@@ -1,0 +1,9 @@
+/* MS SQL */
+
+SELECT  MAX(U.name) AS [NAME],
+        SUM(T.amount) AS [BALANCE]
+FROM    Transactions AS T
+        JOIN Users AS U
+            ON T.account = U.account
+GROUP   BY U.account
+HAVING  SUM(T.amount) > 10000
