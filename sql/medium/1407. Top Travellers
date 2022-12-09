@@ -1,0 +1,12 @@
+/* MS SQL */
+
+SELECT  U.[name],
+        SUM(CASE
+            WHEN U.id = R.user_id THEN distance
+            ELSE 0
+        END) AS travelled_distance
+FROM    Rides AS R
+        RIGHT JOIN Users AS U
+            ON R.user_id = U.id
+GROUP   BY U.[name]
+ORDER   BY travelled_distance DESC, U.[name] ASC
