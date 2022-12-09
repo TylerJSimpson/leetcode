@@ -8,5 +8,5 @@ SELECT  U.[name],
 FROM    Rides AS R
         RIGHT JOIN Users AS U
             ON R.user_id = U.id
-GROUP   BY U.[name]
+GROUP   BY U.[id], U.[name]
 ORDER   BY travelled_distance DESC, U.[name] ASC
