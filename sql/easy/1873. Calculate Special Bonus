@@ -1,3 +1,5 @@
+/* MS SQL */
+
 SELECT employee_id,
        bonus = CASE
                  WHEN employee_id % 2 <> 0
