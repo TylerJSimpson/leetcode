@@ -1,3 +1,5 @@
+/* MS SQL */
+
 SELECT C.NAME AS Customers
 FROM   customers AS C
 WHERE  C.id NOT IN (SELECT customerid
