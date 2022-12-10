@@ -1,3 +1,5 @@
+/* MS SQL */
+
 SELECT A.sell_date,
        Count(A.product)                    AS num_sold,
        String_agg(A.product, ',')
