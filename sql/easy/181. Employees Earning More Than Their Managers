@@ -1,0 +1,7 @@
+/* MS SQL */
+
+SELECT  [name] AS Employee
+FROM    Employee AS E
+WHERE   salary > (SELECT    salary
+                  FROM      Employee
+                  WHERE     Id = E.ManagerId)
