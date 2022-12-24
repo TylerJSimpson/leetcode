@@ -1,0 +1,11 @@
+/* MS SQL */
+
+SELECT  D.name      AS Department,
+        E.name      AS Employee,
+        E.salary    AS Salary
+FROM    Employee    AS E,
+        Department  AS D
+WHERE   E.departmentId = D.id
+AND     E.salary IN (SELECT (MAX(salary))
+                     FROM   Employee
+                     WHERE  departmentid = D.id)
