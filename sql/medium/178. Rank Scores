@@ -1,0 +1,7 @@
+/* MS SQL */
+
+SELECT  Score,
+        DENSE_RANK() OVER(
+            ORDER BY score DESC
+        ) AS rank
+FROM    Scores
