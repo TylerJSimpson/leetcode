@@ -1,0 +1,10 @@
+/* MS SQL */
+
+SELECT  DISTINCT num AS ConsecutiveNums
+FROM    (SELECT id,
+                num,
+                LAG(num) OVER(ORDER BY id) AS before_id,
+                LEAD(num) OVER(ORDER BY id) AS after_id
+         FROM   Logs) AS before_after_id
+WHERE   num = before_id
+AND     before_id = after_id
