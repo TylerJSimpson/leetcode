@@ -3,13 +3,13 @@
 
 grep -E '^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$' file.txt
 
-:'
-^ start line
-$ end line
-\ escape trailing character
-() grouping
-[0-9]{3}-[0-9]{3}-[0-9]{4}$
-XXX-XXX-XXXX
-([0-9]{3}\) [0-9]{3}-[0-9]{4}
-(XXX) XXX-XXXX
-'
+<<COMMENTS
+  ^ start line
+  $ end line
+  \ escape trailing character
+  () grouping
+  [0-9]{3}-[0-9]{3}-[0-9]{4}$
+  XXX-XXX-XXXX
+  ([0-9]{3}\) [0-9]{3}-[0-9]{4}
+  (XXX) XXX-XXXX
+COMMENTS
