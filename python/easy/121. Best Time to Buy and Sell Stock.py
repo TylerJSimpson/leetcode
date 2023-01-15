@@ -16,5 +16,5 @@ class Solution:
             elif price > max_price:
                 max_price = price                               #assign highest value in prices to max_price
                 if diff_price < max_price - min_price:
-                    diff_price = max_price - min_price          #calculate diff_price
+                    diff_price = max_price - min_price          #calculate difference in prices
         return diff_price
